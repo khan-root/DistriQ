@@ -6,7 +6,7 @@ import { DistributorModule } from './distributor/distributor.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { AgentModule } from './agent/agent.module';
-import { CustomerModule } from './customer/customer.module';
+import { StoreModule } from './store/store.module';
 
 @Module({
   imports: [
@@ -17,7 +17,7 @@ import { CustomerModule } from './customer/customer.module';
     AuthModule,
     UserModule,
     AgentModule,
-    CustomerModule,
+    StoreModule,
   ],
   controllers: [AppController],
   providers: [AppService],
