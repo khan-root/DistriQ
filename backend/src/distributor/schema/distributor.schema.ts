@@ -24,11 +24,11 @@ export class Distributor {
   @Prop({ required: true })
   subscriptionPlan: string;
 
-  @Prop({ required: true })
-  subscriptionStartDate: Date;
+  @Prop({ required: true, type: Number })
+  subscriptionStartDate: number;
 
-  @Prop({ required: true })
-  subscriptionEndDate: Date;
+  @Prop({ required: true, type: Number })
+  subscriptionEndDate: number;
 
   @Prop({ required: true, default: false })
   isSubscribed: boolean;
@@ -36,8 +36,8 @@ export class Distributor {
   @Prop({ required: true, default: false })
   isPaid: boolean;
 
-  @Prop({ type: Types.ObjectId, ref: 'WareHouse', required: true })
-  wareHouse: Types.ObjectId;
+  // @Prop({ type: Types.ObjectId, ref: 'WareHouse', required: true })
+  // wareHouse: Types.ObjectId;
 }
 
 export type DistributorDocument = Distributor & Document;
