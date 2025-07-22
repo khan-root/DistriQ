@@ -9,6 +9,8 @@ import { AgentModule } from './agent/agent.module';
 import { StoreModule } from './store/store.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MongoConfigService } from './config/db.config';
+import { APP_GUARD } from '@nestjs/core';
+import { JwtGuard } from './auth/jwt.guard';
 
 @Module({
   imports: [
@@ -26,6 +28,12 @@ import { MongoConfigService } from './config/db.config';
     StoreModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtGuard,
+    },
+  ],
 })
 export class AppModule {}
